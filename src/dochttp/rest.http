@@ -1,0 +1,40 @@
+### Criar cliente
+POST http://localhost:8080/clientes
+Content-Type: application/json
+
+{
+    "email": "cliente@teste.com",
+    "contato": [
+        {
+            "email": "contato@teste.com"
+        },
+        {
+            "email": "contato2@teste.com"
+        }
+    ]
+}
+
+### Inserir cliente sem contato
+POST http://localhost:8080/clientes
+Content-Type: application/json
+
+{
+    "email": "cliente@teste.com"
+}
+
+### Inserir contato para cliente existente
+POST http://localhost:8080/contatos
+Content-Type: application/json
+
+{
+    "email": "contato@teste.com",
+    "clienteId": 2
+}
+
+### Listar todos os clientes & Contatos
+GET http://localhost:8080/clientes
+
+### Listar contatos de um cliente
+GET http://localhost:8080/clientes/1/contatos
+
+
